@@ -1,0 +1,92 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UNKNOWN</title>
+
+<style>
+body {
+    background: #050505;
+    color: #00ff41;
+    font-family: monospace;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+input, button {
+    background: black;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 12px;
+    font-family: monospace;
+}
+
+input {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00ff41;
+    color: black;
+}
+
+#message {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>ENTER ACCESS CODE</h2>
+
+    <form id="accessForm">
+        <input
+            type="text"
+            id="password"
+            placeholder="PASSWORD"
+            autocomplete="off"
+        >
+
+        <button type="submit">ENTER</button>
+    </form>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+document.getElementById("accessForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const password = document.getElementById("password").value.trim();
+    const message = document.getElementById("message");
+
+    if (password === "148260") {
+        message.textContent = "Congratulations for solving the first part of the puzzle, toM bAte knowS ThE Right location.";
+    } else {
+        message.textContent = "ACCESS DENIED";
+    }
+});
+</script>
+
+</body>
+</html>
